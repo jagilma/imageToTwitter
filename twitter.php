@@ -5,14 +5,9 @@ require __DIR__ . '/../twitteroauth-master/autoload.php';
 use Abraham\TwitterOAuth\TwitterOAuth;
 $post_date = file_get_contents("php://input");
 $datos = json_decode($post_date);
-//$media = "@{$datos->media};type=image/png;filename={$datos->name}";
 
 $_SESSION['status']=$datos->status;
 $_SESSION['media']=$datos->media;
-
-syslog(LOG_INFO, 'Paso 1:'.$datos->status);
-syslog(LOG_INFO, 'Paso 2:'.$datos->name);
-//syslog(LOG_INFO, 'Paso 3:'.$media);
 
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);//, $access_token, $access_token_secret);
 $request_token = $connection->oauth('oauth/request_token');//, ['oauth_callback' => OAUTH_CALLBACK]);
