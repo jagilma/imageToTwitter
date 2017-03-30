@@ -42,11 +42,11 @@ switch ($connection->getLastHttpCode()) {
         ];
         $result = $connectionWrite->post('statuses/update', $parameters);
         //print json_encode($result);
-        syslog(LOG_INFO, "Tweet escrito y volviendo a la app");
+        syslog(LOG_INFO, "Tweet done!!!");
         //header('Location: /myImage/app');    
         break;
     default:
-        print "ERROR:OAUTH ERRÓNEO";
+        print "ERROR OAUTH";
 }
 session_destroy();
 ?>
