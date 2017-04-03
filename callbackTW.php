@@ -34,8 +34,6 @@ switch ($connection->getLastHttpCode()) {
         $media = $_SESSION['media'];
 
         $media1 = $connectionWrite->upload('media/upload', ['media' => $media]);
-        //$media2 = $connection->upload('media/upload', ['media' => '/path/to/file/kitten2.jpg']);
-
         $parameters = [ 
             'status' => $status,
             'media_ids' => implode(',', [$media1->media_id_string])
